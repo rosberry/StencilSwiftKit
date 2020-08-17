@@ -27,6 +27,8 @@
 			compilerSpec = com.apple.compilers.pbxcp;
 			filePatterns = "*.storyboard";
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -37,6 +39,8 @@
 			compilerSpec = com.apple.compilers.pbxcp;
 			filePatterns = "*.xcassets";
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -47,6 +51,8 @@
 			compilerSpec = com.apple.compilers.pbxcp;
 			filePatterns = "*.strings";
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -205,6 +211,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
