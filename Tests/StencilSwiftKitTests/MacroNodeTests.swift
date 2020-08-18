@@ -130,8 +130,7 @@ class MacroNodeTests: XCTestCase {
   func testCallableBlockWithFilterExpressionParameter() throws {
     let block = CallableBlock(parameters: ["greeting"], nodes: [])
 
-    let parser = TokenParser(tokens: [], environment: stencilSwiftEnvironment())
-    let arguments = try [FilterExpression(token: "greet|uppercase", parser: parser)]
+    let arguments = try [FilterExpression(token: "greet|uppercase", environment: stencilSwiftEnvironment())]
     let context = Context(dictionary: ["greet": "hello"])
 
     let result = try block.context(context, arguments: arguments, variable: Variable("myFunc"))
