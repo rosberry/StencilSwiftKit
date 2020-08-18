@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.2.0
 import PackageDescription
 
 let package = Package(
@@ -7,7 +7,7 @@ let package = Package(
       .library(name: "StencilSwiftKit", targets: ["StencilSwiftKit"])
   ],
   dependencies: [
-      .package(url: "https://github.com/rosberry/Stencil.git", .branch("master"))
+      .package(url: "https://github.com/rosberry/Stencil.git", .branch("original"))
   ],
   targets: [
     .target(
@@ -22,6 +22,5 @@ let package = Package(
         "StencilSwiftKit"
       ]
     )
-  ],
-  swiftLanguageVersions: [4]
+  ]
 )
