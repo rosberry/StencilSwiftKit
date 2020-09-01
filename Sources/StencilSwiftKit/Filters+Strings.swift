@@ -88,6 +88,9 @@ extension Filters.Strings {
   /// e.g. "PeoplePicker" gives "peoplePicker" but "URLChooser" gives "urlChooser"
   static func lowerFirstWord(_ value: Any?) throws -> Any? {
     let string = try Filters.parseString(from: value)
+    guard string.isEmpty == false else {
+        return string
+    }
     let characterSet = CharacterSet.uppercaseLetters
     let scalars = string.unicodeScalars
     let start = scalars.startIndex
@@ -95,6 +98,7 @@ extension Filters.Strings {
     while idx < scalars.endIndex, let scalar = UnicodeScalar(scalars[idx].value), characterSet.contains(scalar) {
       idx = scalars.index(after: idx)
     }
+
     if idx > scalars.index(after: start) && idx < scalars.endIndex,
       let scalar = UnicodeScalar(scalars[idx].value),
       CharacterSet.lowercaseLetters.contains(scalar) {

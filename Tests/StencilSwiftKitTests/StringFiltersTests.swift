@@ -145,6 +145,7 @@ extension StringFiltersTests {
 
     for (input, expected) in expectations {
       let result = try Filters.Strings.lowerFirstWord(input) as? String
+      print(">>>", input, result!, expected)
       XCTAssertEqual(result, expected)
     }
   }

@@ -21,10 +21,10 @@
       },
       {
         "package": "Stencil",
-        "repositoryURL": "https://github.com/rosberry/Stencil.git",
+        "repositoryURL": "https://github.com/stencilproject/Stencil",
         "state": {
-          "branch": "original",
-          "revision": "14e56194adfec5574bdd66a807f2360129dd870f",
+          "branch": "master",
+          "revision": "22440c53690c84603cea018a5204c0f1e770461d",
           "version": null
         }
       }

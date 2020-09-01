@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "3F9332F4-1EC5-44A3-8000-BA83168C4D85",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:StencilSwiftKit.xcodeproj",
+        "identifier" : "StencilSwiftKit::StencilSwiftKitTests",
+        "name" : "StencilSwiftKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

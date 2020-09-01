@@ -74,7 +74,7 @@ class MacroNodeTests: XCTestCase {
 
   func testRender() throws {
     let node = MacroNode(variableName: "myFunc", parameters: [], nodes: [TextNode(text: "hello")])
-    let context = Context(dictionary: [:])
+    let context = Context()
     let output = try node.render(context)
 
     XCTAssertEqual(output, "")
@@ -82,7 +82,7 @@ class MacroNodeTests: XCTestCase {
 
   func testRenderWithParameters() throws {
     let node = MacroNode(variableName: "myFunc", parameters: ["a", "b", "c"], nodes: [TextNode(text: "hello")])
-    let context = Context(dictionary: [:])
+    let context = Context()
     let output = try node.render(context)
 
     XCTAssertEqual(output, "")
@@ -90,7 +90,7 @@ class MacroNodeTests: XCTestCase {
 
   func testContextModification() throws {
     let node = MacroNode(variableName: "myFunc", parameters: [], nodes: [TextNode(text: "hello")])
-    let context = Context(dictionary: [:])
+    let context = Context(dictionary: ["testVar":"Any"])
     _ = try node.render(context)
 
     guard let block = context["myFunc"] as? CallableBlock else {
@@ -104,7 +104,7 @@ class MacroNodeTests: XCTestCase {
 
   func testContextModificationWithParameters() throws {
     let node = MacroNode(variableName: "myFunc", parameters: ["a", "b", "c"], nodes: [TextNode(text: "hello")])
-    let context = Context(dictionary: [:])
+    let context = Context(dictionary: ["testVar":"Any"])
     _ = try node.render(context)
 
     guard let block = context["myFunc"] as? CallableBlock else {

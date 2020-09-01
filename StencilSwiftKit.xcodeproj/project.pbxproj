@@ -129,6 +129,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A628B124FE5A0500DDAA80 /* StencilSwiftKit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = StencilSwiftKit.xctestplan; path = Tests/StencilSwiftKit.xctestplan; sourceTree = "<group>"; };
 		OBJ_10 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Filters+Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filters+Numbers.swift"; sourceTree = "<group>"; };
@@ -295,9 +296,10 @@
 			path = .build/checkouts/Stencil/Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				01A628B124FE5A0500DDAA80 /* StencilSwiftKit.xctestplan */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_20 /* Tests */,
@@ -313,7 +315,6 @@
 				OBJ_72 /* Gemfile.lock */,
 				OBJ_75 /* LICENCE */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_57 /* PathKit 1.0.0 */ = {
@@ -495,7 +496,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
