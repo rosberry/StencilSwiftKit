@@ -65,12 +65,7 @@ class MacroNode: NodeType {
 
   func render(_ context: Context) throws -> String {
     let block = CallableBlock(parameters: parameters, nodes: nodes, token: token)
-    if parameters.contains("prerendered") {
-        context[variableName] = try renderNodes(block.nodes, context)
-    }
-    else {
-        context[variableName] = block
-    }
+    context[variableName] = block
     return ""
   }
 }
@@ -110,8 +105,12 @@ class CallNode: NodeType {
     }
     let blockContext = try block.context(context, arguments: arguments, variable: variable)
 
-    return try context.push(dictionary: blockContext) {
+    let result = try context.push(dictionary: blockContext) {
       try renderNodes(block.nodes, context)
     }
+    if block.parameters.contains("prerendered") {
+        context[variable.variable] = result
+    }
+    return result
   }
 }
