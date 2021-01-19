@@ -117,21 +117,46 @@ class MacroNodeTests: XCTestCase {
     }
 
     func testPrerenderedMacro() throws {
-        let node = MacroNode(variableName: "myFunc", parameters: ["prerendered"], nodes: [TextNode(text: "hello")])
+        let node = MacroNode(variableName: "myFunc", parameters: [], flags: ["-p"], nodes: [TextNode(text: "hello")])
         let context = Context(dictionary: ["testVar":"Any"])
         _ = try node.render(context)
 
-        guard let text = context["myFunc"] as? String else {
-            XCTFail("Unable to render macro token")
+        guard context["myFunc"] is CallableBlock else {
+            XCTFail("stored variable is not macro block")
             return
         }
-        XCTAssertEqual(text, "hello")
         let callNode = CallNode(variable: .init("myFunc"), arguments: [])
         guard let result = try? callNode.render(context) else {
             XCTFail("Unable to render call prerendered macro")
             return
         }
         XCTAssertEqual(result, "hello")
+        guard let string = context["myFunc"] as? String else {
+            XCTFail("stored variable is not string")
+            return
+        }
+        XCTAssertEqual(result, string)
+    }
+
+    func testNotPrerenderedMacro() throws {
+        let node = MacroNode(variableName: "myFunc", parameters: [], nodes: [TextNode(text: "hello")])
+        let context = Context(dictionary: ["testVar":"Any"])
+        _ = try node.render(context)
+
+        guard context["myFunc"] is CallableBlock else {
+            XCTFail("stored variable is not macro block")
+            return
+        }
+        let callNode = CallNode(variable: .init("myFunc"), arguments: [])
+        guard let result = try? callNode.render(context) else {
+            XCTFail("Unable to render call prerendered macro")
+            return
+        }
+        XCTAssertEqual(result, "hello")
+        guard context["myFunc"] is CallableBlock else {
+            XCTFail("stored variable is not macro block")
+            return
+        }
     }
 
     func testCallableBlockContext() throws {
