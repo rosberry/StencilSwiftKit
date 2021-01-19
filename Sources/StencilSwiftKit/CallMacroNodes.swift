@@ -64,8 +64,13 @@ class MacroNode: NodeType {
   }
 
   func render(_ context: Context) throws -> String {
-    let result = CallableBlock(parameters: parameters, nodes: nodes, token: token)
-    context[variableName] = result
+    let block = CallableBlock(parameters: parameters, nodes: nodes, token: token)
+    if parameters.contains("prerendered") {
+        context[variableName] = try renderNodes(block.nodes, context)
+    }
+    else {
+        context[variableName] = block
+    }
     return ""
   }
 }
@@ -96,7 +101,11 @@ class CallNode: NodeType {
   }
 
   func render(_ context: Context) throws -> String {
-    guard let block = try variable.resolve(context) as? CallableBlock else {
+    let resolved = try variable.resolve(context)
+    if let string = resolved as? String {
+        return string
+    }
+    guard let block = resolved as? CallableBlock else {
       throw TemplateSyntaxError("Call to undefined block '\(variable.variable)'.")
     }
     let blockContext = try block.context(context, arguments: arguments, variable: variable)
