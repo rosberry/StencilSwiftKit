@@ -8,10 +8,6 @@ import Stencil
 
 class AlignNode: NodeType {
 
-    enum Error: Swift.Error {
-        case unexpectedAnchor
-    }
-
     var token: Token?
 
     let nodes: [NodeType]
@@ -25,7 +21,7 @@ class AlignNode: NodeType {
         try nodes.forEach { node in
             if node is AnchorNode {
                 guard anchorIndex == 0 else {
-                    throw Error.unexpectedAnchor
+                    throw TemplateSyntaxError("`anchor` tag defined more then once inside `align` block")
                 }
                 anchorIndex = result.count
             }
@@ -46,7 +42,15 @@ class AlignNode: NodeType {
     }
 
     class func parse(parser: TokenParser, token: Token) throws -> NodeType {
-        let nodes = try parser.parse(until(["endalign", "empty"]))
+        let nodes = try parser.parse(until(["endalign"]))
+
+        guard let token = parser.nextToken() else {
+          throw TemplateSyntaxError("`endalign` was not found.")
+        }
+
+        if token.contents == "empty" {
+          _ = parser.nextToken()
+        }
         return AlignNode(nodes: nodes)
     }
 

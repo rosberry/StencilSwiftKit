@@ -14,12 +14,14 @@ class AlignNodeTests: XCTestCase {
         let inputString = """
         {%align%}Hello {{ name | upperFirstLetter }} please align me {%anchor%}here
             and here
-                and here{%endalign}
+                and here{%endalign%}
+        No align here
         """
         let expectedString = """
         Hello World! please align me here
                                      and here
                                      and here
+        No align here
         """
         guard let result = try? env.renderTemplate(string: inputString, context: ["name": "world!"]) else {
             XCTAssert(false)
