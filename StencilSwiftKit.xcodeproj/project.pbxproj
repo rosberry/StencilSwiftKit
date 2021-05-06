@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		01F776882643F2B0009BD1ED /* AlignNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F776872643F2B0009BD1ED /* AlignNode.swift */; };
+		01F776A32643F51C009BD1ED /* AlignNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F776912643F31F009BD1ED /* AlignNodeTests.swift */; };
+		01F776C62644006E009BD1ED /* AnchorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F776C52644006E009BD1ED /* AnchorNode.swift */; };
 		OBJ_100 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* Filters.swift */; };
 		OBJ_101 /* ForTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* ForTag.swift */; };
 		OBJ_102 /* IfTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* IfTag.swift */; };
@@ -130,6 +133,9 @@
 
 /* Begin PBXFileReference section */
 		01A628B124FE5A0500DDAA80 /* StencilSwiftKit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = StencilSwiftKit.xctestplan; path = Tests/StencilSwiftKit.xctestplan; sourceTree = "<group>"; };
+		01F776872643F2B0009BD1ED /* AlignNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignNode.swift; sourceTree = "<group>"; };
+		01F776912643F31F009BD1ED /* AlignNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignNodeTests.swift; sourceTree = "<group>"; };
+		01F776C52644006E009BD1ED /* AnchorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorNode.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Filters+Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filters+Numbers.swift"; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 				OBJ_30 /* SetNodeTests.swift */,
 				OBJ_31 /* StringFiltersTests.swift */,
 				OBJ_32 /* SwiftIdentifierTests.swift */,
+				01F776912643F31F009BD1ED /* AlignNodeTests.swift */,
 			);
 			name = StencilSwiftKitTests;
 			path = Tests/StencilSwiftKitTests;
@@ -350,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* CallMacroNodes.swift */,
+				01F776C52644006E009BD1ED /* AnchorNode.swift */,
 				OBJ_10 /* Context.swift */,
 				OBJ_11 /* Environment.swift */,
 				OBJ_12 /* Filters+Numbers.swift */,
@@ -360,6 +368,7 @@
 				OBJ_17 /* SetNode.swift */,
 				OBJ_18 /* StencilSwiftTemplate.swift */,
 				OBJ_19 /* SwiftIdentifier.swift */,
+				01F776872643F2B0009BD1ED /* AlignNode.swift */,
 			);
 			name = StencilSwiftKit;
 			path = Sources/StencilSwiftKit;
@@ -529,11 +538,13 @@
 				OBJ_129 /* CallMacroNodes.swift in Sources */,
 				OBJ_130 /* Context.swift in Sources */,
 				OBJ_131 /* Environment.swift in Sources */,
+				01F776882643F2B0009BD1ED /* AlignNode.swift in Sources */,
 				OBJ_132 /* Filters+Numbers.swift in Sources */,
 				OBJ_133 /* Filters+Strings.swift in Sources */,
 				OBJ_134 /* Filters.swift in Sources */,
 				OBJ_135 /* MapNode.swift in Sources */,
 				OBJ_136 /* Parameters.swift in Sources */,
+				01F776C62644006E009BD1ED /* AnchorNode.swift in Sources */,
 				OBJ_137 /* SetNode.swift in Sources */,
 				OBJ_138 /* StencilSwiftTemplate.swift in Sources */,
 				OBJ_139 /* SwiftIdentifier.swift in Sources */,
@@ -559,6 +570,7 @@
 				OBJ_165 /* ParametersTests.swift in Sources */,
 				OBJ_166 /* ParseBoolTests.swift in Sources */,
 				OBJ_167 /* ParseEnumTests.swift in Sources */,
+				01F776A32643F51C009BD1ED /* AlignNodeTests.swift in Sources */,
 				OBJ_168 /* ParseStringTests.swift in Sources */,
 				OBJ_169 /* SetNodeTests.swift in Sources */,
 				OBJ_170 /* StringFiltersTests.swift in Sources */,
